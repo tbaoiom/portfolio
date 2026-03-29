@@ -33,7 +33,7 @@ export default function Home() {
               <Link to="/about" className={styles.ctaSecondary}>About me</Link>
             </div>
           </div>
-          <img src="/pfp.webp" alt="Tai Bui" className={styles.heroPfp} />
+          <img src={`${import.meta.env.BASE_URL}pfp.webp`} alt="Tai Bui" className={styles.heroPfp} />
         </div>
 
         {/* Ambient background orb */}

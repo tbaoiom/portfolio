@@ -29,7 +29,7 @@ export default function About() {
               <h1 className={styles.name}>Tai Bui</h1>
               <p className={styles.role}>Software Engineer — Frontend &amp; Machine Learning</p>
             </div>
-            <img src="/pfp.webp" alt="Tai Bui" className={styles.pfp} />
+            <img src={`${import.meta.env.BASE_URL}pfp.webp`} alt="Tai Bui" className={styles.pfp} />
           </div>
         </div>
 
