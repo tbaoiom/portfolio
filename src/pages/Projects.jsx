@@ -5,10 +5,14 @@ import styles from './Projects.module.css'
 
 const sorted = [...projects].sort((a, b) => new Date(b.date) - new Date(a.date))
 
+// Tags that mark a project as web development, so the filter stays robust
+// whether a build is tagged WordPress, React, Frontend, etc.
+const WEB_TAGS = ['WordPress', 'Web Design', 'Frontend', 'Web']
+
 const TABS = [
-  { key: 'All', label: 'All' },
-  { key: 'ML', label: 'Machine Learning' },
-  { key: 'Frontend', label: 'Web Development' },
+  { key: 'All', label: 'All', match: () => true },
+  { key: 'ML', label: 'Machine Learning', match: p => p.tags.includes('ML') },
+  { key: 'Web', label: 'Web Development', match: p => p.tags.some(t => WEB_TAGS.includes(t)) },
 ]
 
 export default function Projects() {
@@ -21,9 +25,8 @@ export default function Projects() {
     requestAnimationFrame(() => el.classList.add(styles.visible))
   }, [])
 
-  const filtered = tab === 'All'
-    ? sorted
-    : sorted.filter(p => p.tags.includes(tab))
+  const active = TABS.find(t => t.key === tab) || TABS[0]
+  const filtered = sorted.filter(active.match)
 
   return (
     <main className={styles.page}>
