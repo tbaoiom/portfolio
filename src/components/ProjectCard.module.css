@@ -84,8 +84,8 @@
 .year {
   font-size: 12px;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
-  font-weight: 300;
+  color: var(--text-secondary);
+  font-weight: 400;
   flex-shrink: 0;
 }
 
