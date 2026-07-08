@@ -23,10 +23,10 @@ export default function ProjectCard({ project, featured = false }) {
       )}
       <div className={styles.body}>
         <div className={styles.meta}>
-          <span className={styles.year}>{year}</span>
           <div className={styles.tags}>
             {tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}
           </div>
+          <span className={styles.year}>{year}</span>
         </div>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.summary}>{summary}</p>
