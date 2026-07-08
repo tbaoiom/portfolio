@@ -3,12 +3,17 @@ import styles from './ProjectCard.module.css'
 export default function ProjectCard({ project, featured = false }) {
   const { title, date, tags, summary, repo, live, image } = project
   const year = new Date(date).getFullYear()
+  // Relative image paths (e.g. "projects/x.svg") resolve against the Vite base;
+  // absolute URLs (http…) are used as-is.
+  const imageSrc = image && !/^https?:\/\//.test(image)
+    ? `${import.meta.env.BASE_URL}${image}`
+    : image
 
   return (
     <article className={`${styles.card} ${featured ? styles.featured : ''}`}>
       {image && (
         <div className={styles.imageWrap}>
-          <img src={image} alt={title} className={styles.image} />
+          <img src={imageSrc} alt={title} className={styles.image} />
         </div>
       )}
       {!image && (
