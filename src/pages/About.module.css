@@ -91,34 +91,11 @@
   font-style: normal;
 }
 
-.resumeRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-top: 20px;
-}
-
-.resumeBtn {
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  color: var(--text-secondary);
-  padding: 10px 16px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  transition: all 0.2s;
-}
-
-.resumeBtn:hover {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-  background: var(--bg-raised);
-}
-
 .socials {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  padding-top: 20px;
+  padding-top: 28px;
 }
 
 .socialLink {

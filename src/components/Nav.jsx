@@ -2,8 +2,6 @@ import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import styles from './Nav.module.css'
 
-const RESUME = `${import.meta.env.BASE_URL}resume/Tai_Bui_Software_Engineer.pdf`
-
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
@@ -19,7 +17,6 @@ export default function Nav() {
       <NavLink to="/" end onClick={onClick} className={({ isActive }) => isActive ? styles.active : ''}>Home</NavLink>
       <NavLink to="/projects" onClick={onClick} className={({ isActive }) => isActive ? styles.active : ''}>Projects</NavLink>
       <NavLink to="/about" onClick={onClick} className={({ isActive }) => isActive ? styles.active : ''}>About</NavLink>
-      <a href={RESUME} target="_blank" rel="noopener noreferrer" onClick={onClick}>Résumé</a>
     </>
   )
 

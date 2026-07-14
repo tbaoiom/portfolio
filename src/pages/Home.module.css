@@ -313,24 +313,6 @@
   margin-bottom: 32px;
 }
 
-.resumeBtn {
-  display: inline-flex;
-  align-items: center;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  color: var(--text-secondary);
-  padding: 13px 24px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  transition: all 0.2s;
-}
-
-.resumeBtn:hover {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-  background: var(--bg-card);
-}
-
 .contactMeta {
   display: flex;
   gap: 24px;
@@ -387,6 +369,6 @@
   .skillGroups { grid-template-columns: 1fr; gap: 32px; }
   .contact { padding: 72px 24px; }
   .contactActions { flex-direction: column; }
-  .resumeBtn, .contact .ctaPrimary { width: 100%; justify-content: center; }
+  .contact .ctaPrimary { width: 100%; justify-content: center; }
   .footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
 }

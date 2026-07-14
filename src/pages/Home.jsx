@@ -7,9 +7,6 @@ import styles from './Home.module.css'
 // Show the 3 most recent projects on the home page
 const recent = [...projects].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3)
 
-const RESUME_SWE = `${import.meta.env.BASE_URL}resume/Tai_Bui_Software_Engineer.pdf`
-const RESUME_ML = `${import.meta.env.BASE_URL}resume/Tai_Bui_ML_AI_Engineer.pdf`
-
 const stats = [
   { value: '170+', label: 'Production sites built and maintained' },
   { value: '65%', label: 'Faster builds, from 90 hours to under 30' },
@@ -55,7 +52,6 @@ export default function Home() {
             </p>
             <div className={styles.heroCta}>
               <Link to="/projects" className={styles.ctaPrimary}>View work</Link>
-              <a href={RESUME_SWE} target="_blank" rel="noopener noreferrer" className={styles.ctaSecondary}>Résumé</a>
               <a href="#contact" className={styles.ctaSecondary}>Get in touch</a>
             </div>
           </div>
@@ -128,12 +124,6 @@ export default function Home() {
           </p>
           <div className={styles.contactActions}>
             <a href="mailto:taib9642@gmail.com" className={styles.ctaPrimary}>taib9642@gmail.com</a>
-            <a href={RESUME_SWE} target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
-              Software Engineer résumé (PDF)
-            </a>
-            <a href={RESUME_ML} target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
-              ML / AI résumé (PDF)
-            </a>
           </div>
           <div className={styles.contactMeta}>
             <a href="https://github.com/tbaoiom" target="_blank" rel="noopener noreferrer">GitHub</a>

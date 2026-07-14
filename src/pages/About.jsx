@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react'
 import styles from './About.module.css'
 
-const RESUME_SWE = `${import.meta.env.BASE_URL}resume/Tai_Bui_Software_Engineer.pdf`
-const RESUME_ML = `${import.meta.env.BASE_URL}resume/Tai_Bui_ML_AI_Engineer.pdf`
-
 const experience = [
   {
     role: 'Web Developer',
@@ -90,15 +87,6 @@ export default function About() {
             <p>
               I'm open to <em>Software Engineer roles beginning January 2027</em>. Let's connect.
             </p>
-
-            <div className={styles.resumeRow}>
-              <a href={RESUME_SWE} target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
-                Software Engineer résumé (PDF)
-              </a>
-              <a href={RESUME_ML} target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
-                ML / AI résumé (PDF)
-              </a>
-            </div>
 
             <div className={styles.socials}>
               <a href="mailto:taib9642@gmail.com" className={styles.socialLink}>
