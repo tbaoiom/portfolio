@@ -1,43 +1,87 @@
 import { NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import styles from './Nav.module.css'
 
+const RESUME = `${import.meta.env.BASE_URL}resume/Tai_Bui_Software_Engineer.pdf`
+
 export default function Nav() {
+  const [open, setOpen] = useState(false)
+  const close = () => setOpen(false)
+
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
+  const navLinks = (onClick) => (
+    <>
+      <NavLink to="/" end onClick={onClick} className={({ isActive }) => isActive ? styles.active : ''}>Home</NavLink>
+      <NavLink to="/projects" onClick={onClick} className={({ isActive }) => isActive ? styles.active : ''}>Projects</NavLink>
+      <NavLink to="/about" onClick={onClick} className={({ isActive }) => isActive ? styles.active : ''}>About</NavLink>
+      <a href={RESUME} target="_blank" rel="noopener noreferrer" onClick={onClick}>Résumé</a>
+    </>
+  )
+
   return (
     <header className={styles.nav}>
-      <NavLink to="/" className={styles.logo}>
-        TB
-      </NavLink>
+      <NavLink to="/" className={styles.logo} onClick={close}>TB</NavLink>
+
+      {/* Desktop navigation */}
       <nav className={styles.links}>
-        <NavLink to="/" end className={({ isActive }) => isActive ? styles.active : ''}>Home</NavLink>
-        <NavLink to="/projects" className={({ isActive }) => isActive ? styles.active : ''}>Projects</NavLink>
-        <NavLink to="/about" className={({ isActive }) => isActive ? styles.active : ''}>About</NavLink>
-        <a
-          href={`${import.meta.env.BASE_URL}resume/Tai_Bui_Software_Engineer.pdf`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Résumé
-        </a>
-        <a
-          href="https://github.com/tbaoiom"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.iconLink}
-          aria-label="GitHub"
-        >
+        {navLinks()}
+        <a href="https://github.com/tbaoiom" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="GitHub">
           <GitHubIcon />
         </a>
-        <a
-          href="https://www.linkedin.com/in/tai-bui9/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.iconLink}
-          aria-label="LinkedIn"
-        >
+        <a href="https://www.linkedin.com/in/tai-bui9/" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="LinkedIn">
           <LinkedInIcon />
         </a>
       </nav>
+
+      {/* Mobile hamburger */}
+      <button
+        className={styles.burger}
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+        onClick={() => setOpen(o => !o)}
+      >
+        {open ? <CloseIcon /> : <MenuIcon />}
+      </button>
+
+      {/* Mobile menu */}
+      <div className={`${styles.mobileMenu} ${open ? styles.mobileOpen : ''}`}>
+        <nav className={styles.mobileLinks}>
+          {navLinks(close)}
+        </nav>
+        <div className={styles.mobileIcons}>
+          <a href="https://github.com/tbaoiom" target="_blank" rel="noopener noreferrer" onClick={close} className={styles.iconLink} aria-label="GitHub">
+            <GitHubIcon />
+          </a>
+          <a href="https://www.linkedin.com/in/tai-bui9/" target="_blank" rel="noopener noreferrer" onClick={close} className={styles.iconLink} aria-label="LinkedIn">
+            <LinkedInIcon />
+          </a>
+        </div>
+      </div>
+
+      {/* Backdrop */}
+      {open && <div className={styles.backdrop} onClick={close} aria-hidden="true" />}
     </header>
+  )
+}
+
+function MenuIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M3 6h18M3 12h18M3 18h18" />
+    </svg>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
   )
 }
 

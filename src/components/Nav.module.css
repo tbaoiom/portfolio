@@ -22,6 +22,8 @@
   letter-spacing: 0.06em;
   color: var(--accent);
   transition: opacity 0.2s;
+  position: relative;
+  z-index: 2;
 }
 
 .logo:hover { opacity: 0.75; }
@@ -55,7 +57,77 @@
 
 .iconLink:hover { opacity: 1; }
 
-@media (max-width: 640px) {
+/* ── Mobile menu ──────────────────────────────────── */
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  padding: 6px;
+  margin-right: -6px;
+  position: relative;
+  z-index: 2;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(8, 11, 16, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 24px 24px;
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+}
+
+.mobileOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileLinks a {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+
+.mobileLinks a:hover,
+.mobileLinks a.active {
+  color: var(--text-primary);
+}
+
+.mobileIcons {
+  display: flex;
+  gap: 24px;
+  padding-top: 20px;
+}
+
+.mobileIcons .iconLink { opacity: 0.8; }
+
+.backdrop {
+  position: fixed;
+  inset: var(--nav-h) 0 0;
+  z-index: 98;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 720px) {
   .nav { padding: 0 24px; }
-  .links { gap: 20px; }
+  .links { display: none; }
+  .burger { display: flex; }
 }
