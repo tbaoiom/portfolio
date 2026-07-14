@@ -106,6 +106,25 @@
 
 .ctaSecondary:hover { color: var(--text-primary); }
 
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.availDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6bd08a;
+  box-shadow: 0 0 0 4px rgba(107, 208, 138, 0.14);
+  flex-shrink: 0;
+}
+
 .orb {
   position: absolute;
   right: -200px;
@@ -116,6 +135,44 @@
   border-radius: 50%;
   background: radial-gradient(circle, rgba(200,169,126,0.07) 0%, transparent 70%);
   pointer-events: none;
+}
+
+/* ── Impact stats ─────────────────────────────────── */
+.stats {
+  width: calc(100% - 96px);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.stat {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 1px solid var(--border);
+}
+
+.stat:first-child { border-left: none; }
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* ── Recent Projects ──────────────────────────────── */
@@ -170,6 +227,126 @@
   padding: 48px 0;
 }
 
+/* ── Skills ───────────────────────────────────────── */
+.skills {
+  padding: 40px 48px 40px;
+  max-width: calc(var(--max-w) + 96px);
+  margin: 0 auto;
+}
+
+.skillGroups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.skillGroupTitle {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+.skillItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillItem {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  padding: 6px 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.skillItem:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+/* ── Contact ──────────────────────────────────────── */
+.contact {
+  padding: 100px 48px;
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+  background:
+    radial-gradient(600px 300px at 50% 0%, rgba(200,169,126,0.06), transparent 70%),
+    var(--bg-raised);
+}
+
+.contactInner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactTitle {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 8px 0 20px;
+}
+
+.contactText {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  padding: 13px 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.resumeBtn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.contactMeta {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.contactMeta a {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.contactMeta a:hover { color: var(--accent); }
+
 /* ── Footer ───────────────────────────────────────── */
 .footer {
   padding: 32px 48px;
@@ -199,8 +376,17 @@
   .hero { padding: calc(var(--nav-h) + 60px) 24px 60px; }
   .heroInner { flex-direction: column-reverse; align-items: flex-start; gap: 32px; }
   .heroPfp { width: 100px; height: 100px; }
+  .stats { width: calc(100% - 48px); grid-template-columns: 1fr; }
+  .stat { border-left: none; border-top: 1px solid var(--border); padding: 24px; }
+  .stat:first-child { border-top: none; }
+  .statValue { font-size: 44px; }
   .recent { padding: 60px 24px 80px; }
   .sectionHeader { flex-direction: column; align-items: flex-start; gap: 12px; }
   .grid { grid-template-columns: 1fr; }
+  .skills { padding: 32px 24px; }
+  .skillGroups { grid-template-columns: 1fr; gap: 32px; }
+  .contact { padding: 72px 24px; }
+  .contactActions { flex-direction: column; }
+  .resumeBtn, .contact .ctaPrimary { width: 100%; justify-content: center; }
   .footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
 }

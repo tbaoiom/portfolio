@@ -1,11 +1,49 @@
 import { useEffect, useRef } from 'react'
 import styles from './About.module.css'
 
-const timeline = [
-  { year: '2019', event: "Started attending University of Colorado, Denver — Bachelor's in Biology." },
-  { year: '2024', event: "Graduated with a Bachelor's in Computer Science and minor in Biology from the University of Colorado, Denver." },
-  { year: '2025', event: "Started a Master's program in Computer Science at the University of Colorado, Denver." },
-  { year: '2026', event: 'Started developing at EOS Healthcare, building websites for healthcare practices.' },
+const RESUME_SWE = `${import.meta.env.BASE_URL}resume/Tai_Bui_Software_Engineer.pdf`
+const RESUME_ML = `${import.meta.env.BASE_URL}resume/Tai_Bui_ML_AI_Engineer.pdf`
+
+const experience = [
+  {
+    role: 'Web Developer',
+    org: 'EOS Healthcare Marketing',
+    date: 'Mar 2026 – Present',
+    points: [
+      'Maintain 170+ production healthcare websites as one of two developers on a shared JavaScript, PHP, and WordPress codebase — new builds, debugging, and security updates.',
+      "Built internal tooling — Claude skills backed by Model Context Protocol (MCP) servers, plus baseline theme automation — and the team's first CI/CD pipeline, cutting average build time from 90 hours to under 30 (a 65% reduction).",
+      'Automated local-to-staging deployments and uptime monitoring in GitHub Actions, with alerting that automatically files an issue when a site goes down.',
+    ],
+  },
+  {
+    role: 'Teaching Assistant, Algorithms',
+    org: 'University of Colorado Denver',
+    date: 'Jan 2024 – May 2024',
+    points: [
+      'Taught sorting, graph algorithms, and complexity analysis to a class of 30 through weekly office hours and one-on-one tutoring; students in regular tutoring showed measurable exam improvement.',
+    ],
+  },
+]
+
+const certifications = [
+  'AWS Certified Cloud Practitioner',
+  'NVIDIA: Building Transformer-Based NLP Applications',
+  'Software Engineering Certificate — University of Colorado Denver',
+]
+
+const education = [
+  {
+    degree: 'M.S. Computer Science',
+    org: 'University of Colorado Denver',
+    date: 'Expected Dec 2026',
+    note: 'Coursework: Machine Learning, Deep Learning, Generative AI, Big Data Science, Advanced Computer Architecture',
+  },
+  {
+    degree: 'B.A. Computer Science, Biology Minor',
+    org: 'University of Colorado Denver',
+    date: 'May 2024',
+    note: 'GPA 3.87 / 4.00',
+  },
 ]
 
 export default function About() {
@@ -27,26 +65,45 @@ export default function About() {
             <div>
               <p className={styles.eyebrow}>About</p>
               <h1 className={styles.name}>Tai Bui</h1>
-              <p className={styles.role}>Software Engineer — Frontend &amp; Machine Learning</p>
+              <p className={styles.role}>Software Engineer · MS Computer Science · Denver, CO</p>
             </div>
             <img src={`${import.meta.env.BASE_URL}pfp.webp`} alt="Tai Bui" className={styles.pfp} />
           </div>
         </div>
 
         <div className={styles.twoCol}>
-          {/* Bio */}
+          {/* Bio + contact */}
           <section className={styles.bio}>
             <p>
-              I'm Tai, a developer and Master's student in Computer Science at the University of
-              Colorado Denver. I currently work at EOS Healthcare, where I help build websites for
-              healthcare practices. My focus is on frontend development and machine learning, and I
-              enjoy creating digital experiences that are both polished and purposeful.
+              I'm Tai — a software engineer based in Denver and a Master's candidate in Computer
+              Science at the University of Colorado Denver, graduating <em>December 2026</em>. At EOS
+              Healthcare Marketing I'm one of two developers maintaining a portfolio of <em>170+
+              production websites</em>, where I built the internal tooling and the team's first CI/CD
+              pipeline that cut our average build time from 90 hours to under 30 — a 65% reduction.
             </p>
             <p>
-              Thanks for stopping by — let's connect.
+              That tooling is LLM-assisted — Claude skills backed by Model Context Protocol servers —
+              which grew out of a deep-learning background in PyTorch and graduate work in
+              retrieval-augmented systems and rigorous model evaluation. I like building software
+              that's reliable, fast to iterate on, and genuinely useful to the people using it.
+            </p>
+            <p>
+              I'm open to <em>Software Engineer roles beginning January 2027</em>. Let's connect.
             </p>
 
+            <div className={styles.resumeRow}>
+              <a href={RESUME_SWE} target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
+                Software Engineer résumé (PDF)
+              </a>
+              <a href={RESUME_ML} target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
+                ML / AI résumé (PDF)
+              </a>
+            </div>
+
             <div className={styles.socials}>
+              <a href="mailto:taib9642@gmail.com" className={styles.socialLink}>
+                <MailIcon /> Email
+              </a>
               <a
                 href="https://github.com/tbaoiom"
                 target="_blank"
@@ -66,22 +123,58 @@ export default function About() {
             </div>
           </section>
 
-          {/* Timeline */}
-          <section>
-            <h2 className={styles.sectionTitle}>Timeline</h2>
-            <ol className={styles.timeline}>
-              {timeline.map(({ year, event }) => (
-                <li key={year} className={styles.timelineItem}>
-                  <span className={styles.timelineYear}>{year}</span>
-                  <span className={styles.timelineEvent}>{event}</span>
-                </li>
+          {/* Experience / Certifications / Education */}
+          <div className={styles.rightCol}>
+            <section className={styles.block}>
+              <h2 className={styles.sectionTitle}>Experience</h2>
+              {experience.map(({ role, org, date, points }) => (
+                <div key={role} className={styles.entry}>
+                  <div className={styles.entryHead}>
+                    <span className={styles.entryTitle}>{role}</span>
+                    <span className={styles.entryDate}>{date}</span>
+                  </div>
+                  <p className={styles.entryOrg}>{org}</p>
+                  <ul className={styles.entryList}>
+                    {points.map((p, i) => <li key={i}>{p}</li>)}
+                  </ul>
+                </div>
               ))}
-            </ol>
-          </section>
+            </section>
+
+            <section className={styles.block}>
+              <h2 className={styles.sectionTitle}>Certifications</h2>
+              <ul className={styles.certList}>
+                {certifications.map(c => <li key={c}>{c}</li>)}
+              </ul>
+            </section>
+
+            <section className={styles.block}>
+              <h2 className={styles.sectionTitle}>Education</h2>
+              {education.map(({ degree, org, date, note }) => (
+                <div key={degree} className={styles.entry}>
+                  <div className={styles.entryHead}>
+                    <span className={styles.entryTitle}>{degree}</span>
+                    <span className={styles.entryDate}>{date}</span>
+                  </div>
+                  <p className={styles.entryOrg}>{org}</p>
+                  <p className={styles.entryNote}>{note}</p>
+                </div>
+              ))}
+            </section>
+          </div>
         </div>
 
       </div>
     </main>
+  )
+}
+
+function MailIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m2 6 10 7 10-7" />
+    </svg>
   )
 }
 

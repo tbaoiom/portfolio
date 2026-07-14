@@ -49,6 +49,37 @@ const projects = [
     live: 'https://eastplainsveterinarycare.com/',
     image: 'projects/eastplains.png',
   },
+  {
+    id: 'multimodal-disease-subtyping',
+    title: 'Multimodal Disease Subtyping (TCGA-BRCA)',
+    date: '2026-05-15',
+    tags: ['ML', 'PyTorch', 'Python'],
+    summary:
+      'A PyTorch study benchmarking multimodal fusion for breast-cancer subtyping, where balanced-accuracy evaluation exposed a majority-class collapse that headline accuracy had hidden.',
+    desc:
+      'As part of a 4-person team, I owned the RNA-sequencing variational autoencoder (VAE), learning a latent representation of gene-expression profiles and reaching 0.63 accuracy against a 0.58 baseline. I benchmarked four fusion strategies — early concatenation, contrastive latent alignment, joint multimodal VAE, and raw early fusion — against unimodal baselines, and established that none surpassed the clinical-only VAE (0.68 accuracy, 0.59 weighted F1). Evaluating all eight models on balanced accuracy alongside raw accuracy surfaced majority-class collapse in the RNA-only models (0.25 balanced accuracy) that headline numbers had masked, redirecting the team’s approach. Python, PyTorch, variational autoencoders, Scikit-learn.',
+  },
+  {
+    id: 'health-insurance-policy-assistant',
+    title: 'Health Insurance Policy Assistant',
+    date: '2026-05-10',
+    tags: ['ML', 'RAG', 'Python'],
+    summary:
+      'A retrieval-augmented assistant (LLaMA 3.1 · LlamaIndex · FAISS) that orchestrates subagents to retrieve and compare insurance-plan coverage, grounding every answer in source records to prevent hallucinated claims.',
+    desc:
+      'A Retrieval-Augmented Generation (RAG) assistant that orchestrates subagents to retrieve, summarize, and compare plan-coverage details from a structured policy dataset, grounding responses in source records to prevent hallucinated coverage claims. I implemented the vector search and retrieval layer in FAISS and LlamaIndex, iterating on chunking strategy and prompt design to improve groundedness. Python, LLaMA 3.1, LlamaIndex, FAISS.',
+  },
+  {
+    id: 'ai-music-generator',
+    title: 'AI Music Generator',
+    date: '2025-09-26',
+    tags: ['ML', 'Deep Learning', 'Python'],
+    summary:
+      'Generative music models implemented in PyTorch, comparing LSTM and Transformer architectures for learning musical structure and generating new sequences.',
+    desc:
+      'An exploration of sequence modeling for music generation, implementing and comparing LSTM and Transformer-based architectures to learn musical structure and produce novel sequences. Python, PyTorch.',
+    repo: 'https://github.com/tbaoiom/music-ai-generator',
+  },
 ]
 
 export default projects

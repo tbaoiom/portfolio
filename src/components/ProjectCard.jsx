@@ -30,18 +30,20 @@ export default function ProjectCard({ project, featured = false }) {
         </div>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.summary}>{summary}</p>
-        <div className={styles.actions}>
-          {repo && (
-            <a href={repo} target="_blank" rel="noopener noreferrer" className={styles.btn}>
-              GitHub →
-            </a>
-          )}
-          {live && (
-            <a href={live} target="_blank" rel="noopener noreferrer" className={styles.btn}>
-              Live →
-            </a>
-          )}
-        </div>
+        {(repo || live) && (
+          <div className={styles.actions}>
+            {repo && (
+              <a href={repo} target="_blank" rel="noopener noreferrer" className={styles.btn}>
+                GitHub →
+              </a>
+            )}
+            {live && (
+              <a href={live} target="_blank" rel="noopener noreferrer" className={styles.btn}>
+                Live →
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   )
