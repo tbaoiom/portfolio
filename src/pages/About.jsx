@@ -10,9 +10,9 @@ const experience = [
     org: 'EOS Healthcare Marketing',
     date: 'Mar 2026 – Present',
     points: [
-      'Maintain 170+ production healthcare websites as one of two developers on a shared JavaScript, PHP, and WordPress codebase — new builds, debugging, and security updates.',
-      "Built internal tooling — Claude skills backed by Model Context Protocol (MCP) servers, plus baseline theme automation — and the team's first CI/CD pipeline, cutting average build time from 90 hours to under 30 (a 65% reduction).",
-      'Automated local-to-staging deployments and uptime monitoring in GitHub Actions, with alerting that automatically files an issue when a site goes down.',
+      'Maintain 170+ production healthcare websites as one of two developers on a shared JavaScript, PHP, and WordPress codebase, covering new builds, debugging, and security updates.',
+      "Built internal tooling (Claude skills backed by Model Context Protocol servers, plus baseline theme automation) and the team's first CI/CD pipeline, cutting average build time from 90 hours to under 30, a 65% reduction.",
+      'Automated deployments from local to staging and uptime monitoring in GitHub Actions, with alerting that automatically files an issue when a site goes down.',
     ],
   },
   {
@@ -20,15 +20,15 @@ const experience = [
     org: 'University of Colorado Denver',
     date: 'Jan 2024 – May 2024',
     points: [
-      'Taught sorting, graph algorithms, and complexity analysis to a class of 30 through weekly office hours and one-on-one tutoring; students in regular tutoring showed measurable exam improvement.',
+      'Taught sorting, graph algorithms, and complexity analysis to a class of 30 through weekly office hours and individual tutoring; students in regular tutoring showed measurable exam improvement.',
     ],
   },
 ]
 
 const certifications = [
   'AWS Certified Cloud Practitioner',
-  'NVIDIA: Building Transformer-Based NLP Applications',
-  'Software Engineering Certificate — University of Colorado Denver',
+  'NVIDIA: Building Transformer Based NLP Applications',
+  'Software Engineering Certificate, University of Colorado Denver',
 ]
 
 const education = [
@@ -75,16 +75,16 @@ export default function About() {
           {/* Bio + contact */}
           <section className={styles.bio}>
             <p>
-              I'm Tai — a software engineer based in Denver and a Master's candidate in Computer
+              I'm Tai, a software engineer based in Denver and a Master's candidate in Computer
               Science at the University of Colorado Denver, graduating <em>December 2026</em>. At EOS
               Healthcare Marketing I'm one of two developers maintaining a portfolio of <em>170+
               production websites</em>, where I built the internal tooling and the team's first CI/CD
-              pipeline that cut our average build time from 90 hours to under 30 — a 65% reduction.
+              pipeline that cut our average build time from 90 hours to under 30, a 65% reduction.
             </p>
             <p>
-              That tooling is LLM-assisted — Claude skills backed by Model Context Protocol servers —
-              which grew out of a deep-learning background in PyTorch and graduate work in
-              retrieval-augmented systems and rigorous model evaluation. I like building software
+              That tooling is LLM assisted, using Claude skills backed by Model Context Protocol
+              servers, and grew out of a deep learning background in PyTorch and graduate work in
+              retrieval augmented systems and rigorous model evaluation. I like building software
               that's reliable, fast to iterate on, and genuinely useful to the people using it.
             </p>
             <p>

@@ -11,9 +11,9 @@ const RESUME_SWE = `${import.meta.env.BASE_URL}resume/Tai_Bui_Software_Engineer.
 const RESUME_ML = `${import.meta.env.BASE_URL}resume/Tai_Bui_ML_AI_Engineer.pdf`
 
 const stats = [
-  { value: '65%', label: 'Faster average build time' },
-  { value: '170+', label: 'Production sites shipped & maintained' },
-  { value: '1st', label: 'CI/CD pipeline on the team' },
+  { value: '170+', label: 'Production sites built and maintained' },
+  { value: '65%', label: 'Faster builds, from 90 hours to under 30' },
+  { value: '3.87', label: 'GPA, MS Computer Science candidate' },
 ]
 
 const skills = [
@@ -46,12 +46,12 @@ export default function Home() {
             <p className={styles.eyebrow}>Software Engineer</p>
             <h1 className={styles.name}>Tai Bui</h1>
             <p className={styles.tagline}>
-              I build production web at scale — and the internal tooling that ships it faster.
-              Master&apos;s in Computer Science, with a deep-learning background in PyTorch.
+              I build production web at scale, along with the internal tooling that ships it
+              faster. Master&apos;s in Computer Science, with a deep learning background in PyTorch.
             </p>
             <p className={styles.availability}>
               <span className={styles.availDot} aria-hidden="true" />
-              Open to Software Engineer roles — available January 2027
+              Open to Software Engineer roles, available January 2027
             </p>
             <div className={styles.heroCta}>
               <Link to="/projects" className={styles.ctaPrimary}>View work</Link>
@@ -123,11 +123,11 @@ export default function Home() {
           <p className={styles.sectionLabel}>Get in touch</p>
           <h2 className={styles.contactTitle}>Let&apos;s build something.</h2>
           <p className={styles.contactText}>
-            Open to Software Engineer roles starting January 2027. Based in Denver, CO — happy to
+            Open to Software Engineer roles starting January 2027. Based in Denver, CO, and happy to
             work remotely or relocate. The fastest way to reach me is email.
           </p>
           <div className={styles.contactActions}>
-            <a href="mailto:taib9642@gmail.com" className={styles.ctaPrimary}>Email me</a>
+            <a href="mailto:taib9642@gmail.com" className={styles.ctaPrimary}>taib9642@gmail.com</a>
             <a href={RESUME_SWE} target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
               Software Engineer résumé (PDF)
             </a>

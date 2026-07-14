@@ -52,7 +52,7 @@ export default function Projects() {
 
       <div className={styles.content}>
         {filtered.length === 0 ? (
-          <p className={styles.empty}>No projects yet — check back soon.</p>
+          <p className={styles.empty}>No projects yet. Check back soon.</p>
         ) : (
           <div className={styles.grid}>
             {filtered.map(p => (
