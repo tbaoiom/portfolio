@@ -2,7 +2,7 @@ import styles from './ProjectCard.module.css'
 
 export default function ProjectCard({ project, featured = false }) {
   const { title, date, tags, summary, repo, live, image } = project
-  const year = new Date(date).getFullYear()
+  const year = String(date).slice(0, 4)
   // Relative image paths (e.g. "projects/x.svg") resolve against the Vite base;
   // absolute URLs (http…) are used as-is.
   const imageSrc = image && !/^https?:\/\//.test(image)

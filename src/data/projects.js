@@ -13,6 +13,105 @@
 //   image     — path to image in /public/projects/ (optional)
 
 const projects = [
+  // New client work is dated by confirmed year only.
+  {
+    "id": "revity-healthcare-real-estate",
+    "title": "Revity Healthcare Real Estate",
+    "date": "2026",
+    "tags": [
+      "Frontend",
+      "Animation",
+      "Responsive"
+    ],
+    "summary": "I implemented the designer's work and added animations, parallax and responsive layouts to make scrolling feel natural.",
+    "desc": "At EOS Healthcare Marketing, I implemented the designer's work for Revity Healthcare Real Estate. I added animations and parallax effects, refined the scrolling experience and adapted layouts across responsive breakpoints.",
+    "live": "https://revityhre.com/",
+    "image": "projects/revity.jpg"
+  },
+  {
+    "id": "urban-smiles-dental",
+    "title": "Urban Smiles Dental",
+    "date": "2026",
+    "tags": [
+      "Frontend"
+    ],
+    "summary": "A client website I developed for a Cary dental practice, bringing together services, doctor introductions and appointment requests.",
+    "desc": "A client website I developed for a Cary dental practice, bringing together services, doctor introductions and appointment requests.",
+    "live": "https://urbansmilesdentalnc.com/",
+    "image": "projects/urban-smiles.jpg"
+  },
+  {
+    "id": "thistle-veterinary-clinic",
+    "title": "Thistle Veterinary Clinic",
+    "date": "2026",
+    "tags": [
+      "Frontend"
+    ],
+    "summary": "I developed this Seattle veterinary clinic website, with practice information, care resources and clear paths to request an appointment.",
+    "desc": "I developed this Seattle veterinary clinic website, with practice information, care resources and clear paths to request an appointment.",
+    "live": "https://thistlevet.com/",
+    "image": "projects/thistle-vet.jpg"
+  },
+  {
+    "id": "fairfax-veterinary-hospital",
+    "title": "Fairfax Veterinary Hospital",
+    "date": "2026",
+    "tags": [
+      "Frontend"
+    ],
+    "summary": "A veterinary hospital website I developed, presenting the care team, services and urgent care information alongside booking links.",
+    "desc": "A veterinary hospital website I developed, presenting the care team, services and urgent care information alongside booking links.",
+    "live": "https://www.fairfaxveterinary.com/",
+    "image": "projects/fairfax-veterinary.jpg"
+  },
+  {
+    "id": "quebec-highlands-animal-clinic",
+    "title": "Quebec Highlands Animal Clinic",
+    "date": "2026",
+    "tags": [
+      "Frontend"
+    ],
+    "summary": "I developed this Highlands Ranch veterinary website, bringing together clinic information, emergency resources and pet care links.",
+    "desc": "I developed this Highlands Ranch veterinary website, bringing together clinic information, emergency resources and pet care links.",
+    "live": "https://quebechighlandsvet.com/",
+    "image": "projects/quebec-highlands.jpg"
+  },
+  {
+    "id": "pawspital",
+    "title": "Pawspital",
+    "date": "2026",
+    "tags": [
+      "Frontend"
+    ],
+    "summary": "A client website I developed for a Chicago veterinary hospital, introducing its doctor and services with prominent booking and contact options.",
+    "desc": "A client website I developed for a Chicago veterinary hospital, introducing its doctor and services with prominent booking and contact options.",
+    "live": "https://pawspital.vet/",
+    "image": "projects/pawspital.jpg"
+  },
+  {
+    "id": "longview-dental",
+    "title": "Longview Dental",
+    "date": "2026",
+    "tags": [
+      "Frontend"
+    ],
+    "summary": "I developed this Wilkesboro dental practice website, with service information, doctor introductions and appointment requests.",
+    "desc": "I developed this Wilkesboro dental practice website, with service information, doctor introductions and appointment requests.",
+    "live": "https://longviewdental.com/",
+    "image": "projects/longview-dental.jpg"
+  },
+  {
+    "id": "hickory-flat-animal-hospital",
+    "title": "Hickory Flat Animal Hospital",
+    "date": "2026",
+    "tags": [
+      "Frontend"
+    ],
+    "summary": "A veterinary practice website I developed for the Canton area, connecting visitors with the care team, services and booking options.",
+    "desc": "A veterinary practice website I developed for the Canton area, connecting visitors with the care team, services and booking options.",
+    "live": "https://hickoryflatanimalhospital.com/",
+    "image": "projects/hickory-flat.jpg"
+  },
   {
     id: 'aura-dental',
     title: 'Aura Dental',
